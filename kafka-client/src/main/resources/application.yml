@@ -1,1 +1,10 @@
-
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: localhost:9092
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: foo
+      auto-offset-reset: earliest
