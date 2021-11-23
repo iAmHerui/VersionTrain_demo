@@ -1,10 +1,10 @@
 spring:
   datasource:
     name: mysql
-    url: jdbc:mysql://192.168.186.131:3306/solution_hub
+    url: jdbc:mysql://66.0.17.219:3323/HOTDB
     username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

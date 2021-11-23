@@ -7,13 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="versiontrain_demo" />
-        <module name="gateway" />
-        <module name="eureka-server" />
-        <module name="config-server" />
         <module name="kafka-client" />
-        <module name="redis-client" />
+        <module name="config-server" />
         <module name="drds-client" />
+        <module name="redis-client" />
+        <module name="versiontrain_demo" />
+        <module name="VersionTrain_demo" />
+        <module name="eureka-server" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
   </component>

@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.h3c.drdsclient.mapper.DRDSClientMapper">
 
+    <select id="selectInfo" resultType="com.h3c.drdsclient.entity.testBO">
+        SELECT
+            id,
+            name
+        FROM versiontrain_table;
+    </select>
+
     <insert id="insertInfo" >
         INSERT INTO  versiontrain_table (
             name
@@ -11,14 +18,14 @@
     </insert>
 
     <delete id="deleteInfo">
-        DELETE FROM versiontrain_table WHERE name = #{name}
+        DELETE FROM versiontrain_table WHERE id = #{id}
     </delete>
 
     <update id="updateInfo" >
     UPDATE  versiontrain_table
         SET
-            name = #{name,jdbcType=VARCHAR}
-        WHERE name = #{name,jdbcType=VARCHAR}
+            name = #{newName}
+        WHERE id = #{id}
     </update>
 
 </mapper>
