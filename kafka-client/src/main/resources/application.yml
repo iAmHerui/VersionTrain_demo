@@ -1,10 +1,22 @@
 spring:
   kafka:
+    bootstrap-servers: 66.0.17.186:6667,66.0.17.44:6667,66.0.17.69:6667
     producer:
+      retries: 0
+#      每次批量发送消息的数量
+      batch-size: 16384
+      buffer-memory: 33554432
+#      指定消息key和消息体的编解码方式
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      bootstrap-servers: localhost:9092
+
     consumer:
-      bootstrap-servers: localhost:9092
-      group-id: foo
+#      指定默认消费者group id
+      group-id: user-log-group
       auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+

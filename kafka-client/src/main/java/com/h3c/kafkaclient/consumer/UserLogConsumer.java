@@ -9,16 +9,19 @@ import java.util.Optional;
 
 @Component
 @Slf4j
-public class TestConsumer {
+public class UserLogConsumer {
 
-    @KafkaListener(topics = {"topic_test"})
+    @KafkaListener(topics = {"user-log"})
     public void consumer(ConsumerRecord<?,?> consumerRecord) {
 
+        // 判断是否为null
         Optional<?> kafkaMessage = Optional.ofNullable(consumerRecord.value());
 
+        log.info(">>>>>>>>>> record = "+kafkaMessage);
         if(kafkaMessage.isPresent()) {
+            // 得到Optional实例中的值
             Object message = kafkaMessage.get();
-            log.info("消费消息为: "+message);
+            log.info("消费消息："+message);
         }
     }
 }
