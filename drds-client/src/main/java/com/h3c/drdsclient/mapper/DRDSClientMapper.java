@@ -10,5 +10,5 @@ public interface DRDSClientMapper {
 
     Boolean deleteInfo(@Param("name") String name);
 
-    Boolean updateInfo(@Param("name") String name);
+    Boolean updateInfo(@Param("oldName") String oldName,@Param("newName") String newName);
 }

@@ -17,8 +17,8 @@
     <update id="updateInfo" >
     UPDATE  versiontrain_table
         SET
-            name = #{name,jdbcType=VARCHAR}
-        WHERE name = #{name,jdbcType=VARCHAR}
+            name = #{newName,jdbcType=VARCHAR}
+        WHERE name = #{oldName,jdbcType=VARCHAR}
     </update>
 
 </mapper>

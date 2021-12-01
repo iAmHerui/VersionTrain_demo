@@ -20,8 +20,8 @@ public class DRDSClientController {
     }
 
     @GetMapping("/update")
-    public Boolean update(String name){
-        return drdsClientMapper.updateInfo(name);
+    public Boolean update(String oldName,String newName){
+        return drdsClientMapper.updateInfo(oldName, newName);
     }
 
     @GetMapping("/delete")
